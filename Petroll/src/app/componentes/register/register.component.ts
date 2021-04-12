@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { BackendService } from '../../backend.service';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
-  constructor(private backend: BackendService, private router: Router) { }
+  constructor(private backend: BackendService) {}
   Usuario = new FormControl('', [Validators.required]);
-  errorLogin ="";
   Contrasena = new FormControl('', [Validators.required, Validators.minLength(3)]);
+  ConfirmaContrasena = new FormControl('', [Validators.required, Validators.minLength(3)]);
   getUsuarioErrorMessage()
   {
     if (this.Usuario.hasError('required'))
@@ -33,13 +32,25 @@ export class LoginComponent implements OnInit {
 
     return this.Contrasena.hasError('minlength') ? 'Contraseña demasiado corta' : '';
   }
+  getConfirmaContrasenaErrorMessage()
+  {
+    if (this.ConfirmaContrasena.hasError('required'))
+    {
+      return 'Por favor, ingrese un valor';
+    }
+    else if (this.Contrasena.value !== this.ConfirmaContrasena.value )
+    {
+      return 'Los valores no coinciden';
+    }
+    return this.ConfirmaContrasena.hasError('minlength') ? 'Contraseña demasiado corta' : '';
+  }
   ngOnInit() {
   }
 
-  login()
+  register()
   {
 
-    if (this.getUsuarioErrorMessage() || this.getContrasenaErrorMessage())
+    if (this.getUsuarioErrorMessage() || this.getContrasenaErrorMessage() || this.getConfirmaContrasenaErrorMessage())
     {
       return;
     }
@@ -51,19 +62,11 @@ export class LoginComponent implements OnInit {
     }
       console.log(data);
 
-    let response = this.backend.loginUsuario(data);
+    let response = this.backend.registerUsuario(data);
 
     response.subscribe((res: any) =>
     {
       console.log(res)
-      if(res.estado === "FALLIDO" )
-      {
-        this.errorLogin = res.mensaje;
-      }
-      else if(res.estado === "EXITOSO")
-      {
-        this.router.navigate(['home']);
-      }
     });
   }
 }

@@ -1,6 +1,3 @@
-<!--<div class="bg"></div>-->
-<!-- <div class="bg bg2"></div>-->
-<!--<div class="bg bg3"></div>-->
 <div class="card" style="width: 450px;
   height: 47px;
   margin-top: 50px;
@@ -8,7 +5,7 @@
   left: 50%;
   top: 50%;
   position: -ms-page;" >
-  <h4 class="card-header">Petroll</h4>
+  <h4 class="card-header">Petroll Registrarse</h4>
   <div class="card-body">
       <form>
         <div class="bg"></div>
@@ -16,18 +13,22 @@
               <label for="username">Username</label>
               <input type="text" formControlName="username" class="form-control" style="width: 400px;" [formControl]="Usuario"/>
               <span style="color:red;" *ngIf="Usuario.invalid">{{getUsuarioErrorMessage()}}</span>
-          </div>
+            </div>
           <div class="form-group">
               <label for="password">Password</label>
               <input type="password" formControlName="password" class="form-control" style="width: 400px;" [formControl]="Contrasena"/>
               <span style="color:red;" *ngIf="Contrasena.invalid">{{getContrasenaErrorMessage()}}</span>
             </div>
           <div class="form-group">
-              <button class="btn btn-primary" (click)="login()">
-                  Login
+            <label for="password">Password Confirmation</label>
+            <input type="password" formControlName="password-confirmation" class="form-control" style="width: 400px;" [formControl]="ConfirmaContrasena"/>
+            <span style="color:red;" *ngIf="getConfirmaContrasenaErrorMessage()" >{{getConfirmaContrasenaErrorMessage()}}</span>
+          </div>
+          <div class="form-group">
+              <button class="btn btn-primary" (click)="register()">
+                Registrarse
               </button>
-              <span style="color:red;" *ngIf="this.errorLogin">{{this.errorLogin}}</span>
-              <a routerLink="../register" class="btn btn-link">Register</a>
+              <a routerLink="../login" class="btn btn-link">login</a>
           <!--<div id="capa1">
             <img src ="https://raw.githubusercontent.com/AlexUwU/Proyecto-PrograWeb/master/Petroll/src/icon/catdogcut.png"/>
           </div>-->

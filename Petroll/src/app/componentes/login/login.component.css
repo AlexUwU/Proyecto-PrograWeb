@@ -5,6 +5,9 @@ html {
 body {
   margin:0;
 }
+.catdog{
+
+}
 
 .bg {
   animation:slide 3s ease-in-out infinite alternate;
