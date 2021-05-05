@@ -9,7 +9,7 @@ export class BackendService {
   constructor(private http: HttpClient) { }
   loginUsuario(data: any)
   {
-    return this.http.post<any>('http://localhost:400/login', data, {
+    return this.http.post<any>('EC2Co-EcsEl-1VQV40H4BCES4-551203416.us-east-1.elb.amazonaws.com:4000/login', data, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
@@ -17,7 +17,7 @@ export class BackendService {
   }
   registerUsuario(data: any)
   {
-      return this.http.post<any>('http://localhost:400/register', data, {
+      return this.http.post<any>('EC2Co-EcsEl-1VQV40H4BCES4-551203416.us-east-1.elb.amazonaws.com:4000/register', data, {
         headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
