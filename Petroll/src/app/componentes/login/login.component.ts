@@ -14,6 +14,13 @@ export class LoginComponent implements OnInit {
   Usuario = new FormControl('', [Validators.required]);
   errorLogin ="";
   Contrasena = new FormControl('', [Validators.required, Validators.minLength(3)]);
+
+  register(){
+
+    this.router.navigate(['register']);
+
+  }
+
   getUsuarioErrorMessage()
   {
     if (this.Usuario.hasError('required'))

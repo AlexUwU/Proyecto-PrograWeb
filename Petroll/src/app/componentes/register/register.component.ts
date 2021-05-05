@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { BackendService } from '../../backend.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +10,7 @@ import { BackendService } from '../../backend.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private backend: BackendService) {}
+  constructor(private backend: BackendService, private router: Router) {}
   Usuario = new FormControl('', [Validators.required]);
   Contrasena = new FormControl('', [Validators.required, Validators.minLength(3)]);
   ConfirmaContrasena = new FormControl('', [Validators.required, Validators.minLength(3)]);
@@ -45,6 +46,12 @@ export class RegisterComponent implements OnInit {
     return this.ConfirmaContrasena.hasError('minlength') ? 'Contraseña demasiado corta' : '';
   }
   ngOnInit() {
+  }
+
+  login(){
+
+    this.router.navigate(['login']);
+
   }
 
   register()
