@@ -11,12 +11,12 @@ export class BackendService {
   constructor(private http: HttpClient) { }
   loginUsuario(data: any)
   {
-      return this.http.post('EC2Co-EcsEl-E8N091GW896C-825793951.us-east-1.elb.amazonaws.com:3000/petroll/login', data).pipe(catchError(this.clientError));
+      return this.http.post('EC2Co-EcsEl-E8N091GW896C-825793951.us-east-1.elb.amazonaws.com:8009/petroll/login', data).pipe(catchError(this.clientError));
       //return this.http.post('http://localhost:3000/petroll/login', data).pipe(catchError(this.clientError));
   }
   registerUsuario(data: any)
   {
-      return this.http.post('EC2Co-EcsEl-E8N091GW896C-825793951.us-east-1.elb.amazonaws.com:3000/petroll/register', data).pipe(catchError(this.clientError));
+      return this.http.post('EC2Co-EcsEl-E8N091GW896C-825793951.us-east-1.elb.amazonaws.com:8009/petroll/register', data).pipe(catchError(this.clientError));
       //return this.http.post('http://localhost:3000/petroll/register', data).pipe(catchError(this.clientError));
   }
 
