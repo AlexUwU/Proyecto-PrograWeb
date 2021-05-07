@@ -17,4 +17,12 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['login']);
   }
 
+  solicitud(){
+    this.router.navigate(['CrearSolicitud']);
+  }
+
+  solicitudes(){
+    this.router.navigate(['Solicitudes']);
+  }
+
 }
