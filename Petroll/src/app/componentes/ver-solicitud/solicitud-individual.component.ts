@@ -28,6 +28,24 @@ export class SolicitudIndividualComponent implements OnInit {
     })
   }
 
+  Aceptar() {
+
+    let id = localStorage.getItem('id')
+    this.backend.AceptarSolicitud({_id:id}).subscribe((data) => {
+      alert(data.mensaje)
+      this.router.navigate(['Solicitudes']);
+    })
+  }
+
+  Rechazar() {
+
+    let id = localStorage.getItem('id')
+    this.backend.RechazarSolicitud({_id:id}).subscribe((data) => {
+      alert(data.mensaje)
+      this.router.navigate(['Solicitudes']);
+    })
+  }
+
   logout(){
     this.router.navigate(['login']);
   }

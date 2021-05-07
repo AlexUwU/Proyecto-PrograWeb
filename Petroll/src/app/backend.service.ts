@@ -40,6 +40,16 @@ export class BackendService {
       return this.http.post(`${environment.server}/petroll/deletesolicitud`, data).pipe(catchError(this.clientError));
   }
 
+  AceptarSolicitud(data: any):Observable<any>
+  {
+      return this.http.post(`${environment.server}/petroll/aceptarsolicitud`, data).pipe(catchError(this.clientError));
+  }
+
+  RechazarSolicitud(data: any):Observable<any>
+  {
+      return this.http.post(`${environment.server}/petroll/rechazarsolicitud`, data).pipe(catchError(this.clientError));
+  }
+
   clientError(error: HttpErrorResponse) {
     let errorMessage = 'Unknown error!';
     if (error.error instanceof ErrorEvent) {

@@ -26,14 +26,22 @@
     </nav>
     <!-- title & content -->
     <section class="header-content">
-      <img class="center"
-      src="https://raw.githubusercontent.com/AlexUwU/Proyecto-PrograWeb/master/Petroll/src/icon/catdogcut.png"
-      style="width: 15%;">
-      <h1>Solicitud Individual</h1>
-              <p class="m-0 font-weight-bold colorHandy">Título:</p>
-              <p> {{solicitud.titulo}} </p>
-
-              <p class="m-0 font-weight-bold colorHandy">Descripción:</p>
-              <p> {{solicitud.descripcion}} </p>
+      <mat-card class="center example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{solicitud.titulo}}</mat-card-title>
+          <mat-card-subtitle>{{solicitud.estado}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://www.petbusinessinsurance.co.uk/img/dogwalking.jpg">
+        <mat-card-content>
+          <p>
+            {{solicitud.descripcion}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button  (click)="Aceptar()">Iniciar</button>
+          <button mat-button (click)="Rechazar()">Rechazar</button>
+        </mat-card-actions>
+      </mat-card>
     </section>
   </header>

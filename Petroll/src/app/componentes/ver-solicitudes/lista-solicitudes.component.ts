@@ -13,7 +13,7 @@ export class SolicitudesComponent implements OnInit {
 
   constructor(private backend: BackendService, private router: Router) {}
 
-  cookie!: Solicitud[];
+  solicitudes!: Solicitud[];
 
   ngOnInit() {
     this.getSolicitudes();
@@ -21,7 +21,7 @@ export class SolicitudesComponent implements OnInit {
 
   getSolicitudes() {
     this.backend.getSolicitudes().subscribe((data) => {
-      this.cookie = data;
+      this.solicitudes = data;
       //console.log(this.cookie);
     })
   }
