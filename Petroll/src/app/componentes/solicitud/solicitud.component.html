@@ -26,11 +26,26 @@
     </nav>
     <!-- title & content -->
     <section class="header-content">
-      <h1>Welcome to Petroll</h1>
-      <p> Welcome to our service. We are a passionated pet lovers,<br>
-        making high quality service designed to make your life easier.</p>
-      <button>
-        <a href="https://github.com/AlexUwU/Proyecto-PrograWeb">Conócenos</a>
-      </button>
+      <h1>Nueva Solicitud</h1>
+
+      <div class="card" style="width: 50%; margin-left: auto; margin-right: auto;">
+        <div class="card-body">
+          <!--<form [formGroup]="form_nueva" class="form-nueva" (ngSubmit)="CrearLista()" id="form_nueva">-->
+          <form [formGroup]="form_nueva" class="form-nueva" id="form_nueva">
+            <label for="inputNameList" class="sr-only">Name List</label>
+            <input type="text" formControlName="name" id="inputListName" class="form-control" placeholder="Name List"
+              autofocus="">
+            <br>
+            <label for="inputDescription" class="sr-only">Description</label>
+            <textarea formControlName="description" class="form-control" id="inputDescription" rows="3"
+              placeholder="Description"></textarea>
+            <br>
+            <button type="submit" class="btn btn-lg btn-warning btn-block" id="bCreate">Create List</button>
+            <p style="text-align:center" class="mt-5 mb-3 text-muted">© 2021</p>
+          </form>
+        </div>
+      </div>
+
+
     </section>
   </header>

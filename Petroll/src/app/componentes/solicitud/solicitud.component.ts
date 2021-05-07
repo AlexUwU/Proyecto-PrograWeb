@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, Validators,FormGroup } from '@angular/forms';
 import { BackendService } from '../../backend.service';
 import { Router } from '@angular/router';
 
@@ -9,6 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./solicitud.component.css']
 })
 export class SolicitudComponent implements OnInit {
+
+
+  form_nueva: FormGroup;
 
   constructor(private backend: BackendService, private router: Router) {}
 

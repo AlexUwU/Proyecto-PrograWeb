@@ -12,27 +12,27 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-{
-   path: '', component:LoginComponent
-},
-{
-  path: 'register', component:RegisterComponent
-},
-{
-  path: 'login', component:LoginComponent
-},
-{
-  path: 'home', component:HomeComponent
-},
-{
-  path: 'CrearSolicitud', component:SolicitudComponent
-},
-{
-  path: 'VerSolicitud', component:SolicitudIndividualComponent
-},
-{
-  path: 'Solicitudes', component:SolicitudesComponent
-}
+  {
+    path: '', component: LoginComponent
+  },
+  {
+    path: 'register', component: RegisterComponent
+  },
+  {
+    path: 'login', component: LoginComponent
+  },
+  {
+    path: 'home', component: HomeComponent
+  },
+  {
+    path: 'CrearSolicitud', component: SolicitudComponent
+  },
+  {
+    path: 'VerSolicitud', component: SolicitudIndividualComponent
+  },
+  {
+    path: 'Solicitudes', component: SolicitudesComponent
+  }
 ];
 
 
