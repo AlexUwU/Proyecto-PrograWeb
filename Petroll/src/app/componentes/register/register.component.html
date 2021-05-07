@@ -1,54 +1,82 @@
-<div class="card" style="width: 450px;
+<!-- Background & animion & navbar & title -->
+<div class="container-fluid">
+  <!-- Background animtion-->
+  <div class="background">
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+  </div>
+  <!-- header -->
+  <header>
+        <!-- logo -->
+        <div class="logo">
+          <img src ="https://raw.githubusercontent.com/AlexUwU/Proyecto-PrograWeb/master/Petroll/src/icon/catdogcut.png"/>
+        </div>
+        <div class="logo2">
+          <img src ="https://raw.githubusercontent.com/AlexUwU/Proyecto-PrograWeb/master/Petroll/src/icon/catdogcut.png"/>
+        </div>
+    <section class="header-content">
+      <div class="card" style="width: 450px;
   height: 47px;
   margin-top: 50px;
   margin-left: -200px;
   left: 50%;
   top: 50%;
-  position: -ms-page;" >
-  <h4 class="card-header">Petroll Registrarse</h4>
-  <div class="card-body">
-      <form>
-        <div class="bg"></div>
-          <div class="form-group">
+  background-color: rgb(131, 165, 165);
+  position: -ms-page;">
+        <h4 class="card-header">Registrarse</h4>
+        <div class="card-body">
+          <form>
+            <div class="bg"></div>
+            <div class="form-group">
               <label for="username">Username</label>
-              <input type="text" formControlName="username" class="form-control" style="width: 400px;" [formControl]="Usuario"/>
+              <input type="text" formControlName="username" class="form-control" style="width: 400px;"
+                [formControl]="Usuario" />
               <span style="color:red;" *ngIf="Usuario.invalid">{{getUsuarioErrorMessage()}}</span>
             </div>
-          <div class="form-group">
+            <div class="form-group">
               <label for="password">Password</label>
-              <input type="password" formControlName="password" class="form-control" style="width: 400px;" [formControl]="Contrasena"/>
+              <input type="password" formControlName="password" class="form-control" style="width: 400px;"
+                [formControl]="Contrasena" />
               <span style="color:red;" *ngIf="Contrasena.invalid">{{getContrasenaErrorMessage()}}</span>
             </div>
-          <div class="form-group">
-            <label for="password">Password Confirmation</label>
-            <input type="password" formControlName="password-confirmation" class="form-control" style="width: 400px;" [formControl]="ConfirmaContrasena"/>
-            <span style="color:red;" *ngIf="getConfirmaContrasenaErrorMessage()" >{{getConfirmaContrasenaErrorMessage()}}</span>
-          </div>
-          <div class="form-group">
+            <div class="form-group">
+              <label for="password">Password Confirmation</label>
+              <input type="password" formControlName="password-confirmation" class="form-control" style="width: 400px;"
+                [formControl]="ConfirmaContrasena" />
+              <span style="color:red;"
+                *ngIf="getConfirmaContrasenaErrorMessage()">{{getConfirmaContrasenaErrorMessage()}}</span>
+            </div>
+            <div class="form-group">
               <button class="btn btn-primary" (click)="register()">
                 Registrarse
               </button>
               <button style="margin:5px;" class="btn btn-primary" (click)="login()">
                 Login
               </button>
-          <!--<div id="capa1">
+              <!--<div id="capa1">
             <img src ="https://raw.githubusercontent.com/AlexUwU/Proyecto-PrograWeb/master/Petroll/src/icon/catdogcut.png"/>
           </div>-->
-          <style>
-            img {
-              display: block;
-              margin-left: auto;
-              margin-right: auto;
-              width: 700px;
-              height: 700px;
-              margin-top: -70px;
-              margin-left: -350px;
-              left: 50%;
-              top: 50%;
-              position:absolute;
-            }
-            </style>
-          </div>
-      </form>
-  </div>
+              <style>
+                img {
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  width: 700px;
+                  height: 700px;
+                  margin-top: -70px;
+                  margin-left: -350px;
+                  left: 50%;
+                  top: 50%;
+                  position: absolute;
+                }
+              </style>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </header>
 </div>
