@@ -37,6 +37,7 @@ export class SolicitudesComponent implements OnInit {
   VerSolicitud(id: any) {
 
     localStorage.setItem('id',id);
+    console.log(id)
     this.router.navigate(['VerSolicitud']);
   }
 
