@@ -107,6 +107,14 @@ nav ul li:hover{
   height: 35px;
   background: #EFEEF5;
   margin: 40px 63px;
+  float: right;
+  transform: rotate(30deg);
+}
+.logo2{
+  width: 35px;
+  height: 35px;
+  background: #EFEEF5;
+  margin: 40px 63px;
   float: left;
   transform: rotate(-30deg);
 }
@@ -119,7 +127,7 @@ nav ul li:hover{
 }
 /* Header content & title & button*/
 .header-content{
-  margin-top:25%;
+  margin-top:10%;
   text-align: center;
   color:  #EFEEF5;
 }

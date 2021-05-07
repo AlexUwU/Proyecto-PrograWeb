@@ -74,6 +74,7 @@ export class RegisterComponent implements OnInit {
     response.subscribe((res: any) =>
     {
       console.log(res)
+      this.router.navigate(['login']);
     });
   }
 }

@@ -1,5 +1,36 @@
-<h1>Home</h1>
-  <button class="btn btn-primary" (click)="logout()">
-    Cerrar Sesión
-  </button>
-
+<!-- Background & animion & navbar & title -->
+<div class="container-fluid">
+  <!-- Background animtion-->
+  <div class="background">
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+  </div>
+  <!-- header -->
+  <header>
+    <!-- navbar -->
+    <nav>
+      <ul>
+        <button style="margin:5px;" class="btn btn-danger mr-1" (click)="logout()">
+          Cerrar Sesión
+        </button>
+        <button style="margin:5px;" class="btn btn-warning mr-1" (click)="logout()">
+          Solicitud
+        </button>
+        <button style="margin:5px;" class="btn btn-primary" (click)="logout()">
+          Solicitudes
+        </button>
+      </ul>
+    </nav>
+    <!-- title & content -->
+    <section class="header-content">
+      <h1>Welcome to Petroll</h1>
+      <p> Welcome to our service. We are a passionated pet lovers,<br>
+        making high quality service designed to make your life easier.</p>
+      <button>
+        <a href="https://github.com/AlexUwU/Proyecto-PrograWeb">Conócenos</a>
+      </button>
+    </section>
+  </header>
