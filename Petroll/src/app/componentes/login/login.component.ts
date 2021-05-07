@@ -70,6 +70,7 @@ export class LoginComponent implements OnInit {
       }
       else if(res.estado === "EXITOSO")
       {
+        sessionStorage.setItem('token',res.token);
         this.router.navigate(['home']);
       }
     });

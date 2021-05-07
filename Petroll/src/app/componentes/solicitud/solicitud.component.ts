@@ -29,6 +29,8 @@ export class SolicitudComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.backend.revisarJWS();
   }
 
   IniciarSolicitud(){

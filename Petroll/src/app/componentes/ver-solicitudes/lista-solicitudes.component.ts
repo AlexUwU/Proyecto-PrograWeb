@@ -16,6 +16,7 @@ export class SolicitudesComponent implements OnInit {
   solicitudes!: Solicitud[];
 
   ngOnInit() {
+    this.backend.revisarJWS();
     this.getSolicitudes();
   }
 

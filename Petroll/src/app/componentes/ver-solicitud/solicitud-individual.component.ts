@@ -17,6 +17,7 @@ export class SolicitudIndividualComponent implements OnInit {
 
   ngOnInit() {
 
+    this.backend.revisarJWS();
     this.getSolicitud();
   }
 

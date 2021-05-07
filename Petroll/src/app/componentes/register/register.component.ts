@@ -46,6 +46,8 @@ export class RegisterComponent implements OnInit {
     return this.ConfirmaContrasena.hasError('minlength') ? 'Contraseña demasiado corta' : '';
   }
   ngOnInit() {
+
+    this.backend.revisarJWS();
   }
 
   login(){
