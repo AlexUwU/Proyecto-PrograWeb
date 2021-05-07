@@ -1,23 +1,43 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
+import { throwError,Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BackendService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
+
   loginUsuario(data: any)
   {
-      return this.http.post('http://ec2co-ecsel-lq9hv7xq836b-243915937.us-east-1.elb.amazonaws.com:8009/petroll/login', data).pipe(catchError(this.clientError));
-      //return this.http.post('http://localhost:3000/petroll/login', data).pipe(catchError(this.clientError));
+      return this.http.post(`${environment.server}/petroll/login`, data).pipe(catchError(this.clientError));
   }
   registerUsuario(data: any)
   {
-      return this.http.post('http://ec2co-ecsel-lq9hv7xq836b-243915937.us-east-1.elb.amazonaws.com:8009/petroll/register', data).pipe(catchError(this.clientError));
-      //return this.http.post('http://localhost:3000/petroll/register', data).pipe(catchError(this.clientError));
+      return this.http.post(`${environment.server}/petroll/register`, data).pipe(catchError(this.clientError));
+  }
+
+  crearSolicitud(data: any)
+  {
+      return this.http.post(`${environment.server}/petroll/crearsolicitud`, data).pipe(catchError(this.clientError));
+  }
+
+  getSolicitudes(): Observable<any> {
+    return this.http.get(`${environment.server}/petroll/getsolicitudes`).pipe(catchError(this.clientError));
+  }
+
+  getSolicitud(data: any):Observable<any>
+  {
+      return this.http.post(`${environment.server}/petroll/getsolicitud`, data).pipe(catchError(this.clientError));
+  }
+
+  EliminarSolicitud(data: any)
+  {
+      return this.http.post(`${environment.server}/petroll/deletesolicitud`, data).pipe(catchError(this.clientError));
   }
 
   clientError(error: HttpErrorResponse) {

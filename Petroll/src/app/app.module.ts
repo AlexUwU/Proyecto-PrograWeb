@@ -14,8 +14,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    RegisterComponent,
     SolicitudesComponent,
     SolicitudComponent,
     SolicitudIndividualComponent

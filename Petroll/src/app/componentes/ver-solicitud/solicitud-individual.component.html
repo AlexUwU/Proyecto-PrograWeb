@@ -13,14 +13,38 @@
     <!-- navbar -->
     <nav>
       <ul>
-
+        <button style="margin:5px;" class="btn btn-danger mr-1" (click)="logout()">
+          Cerrar Sesión
+        </button>
+        <button style="margin:5px;" class="btn btn-warning mr-1" (click)="home()">
+          Home
+        </button>
+        <button style="margin:5px;" class="btn btn-primary" (click)="solicitudes()">
+          Solicitudes
+        </button>
       </ul>
     </nav>
     <!-- title & content -->
     <section class="header-content">
       <h1>Solicitud Individual</h1>
 
+      <div class="row mb-5">
+        <div class="col-12 text-center">
+          <div class="card bg-light border-info">
+            <div class="card-body">
 
+              <img class="center"
+                src="https://raw.githubusercontent.com/AlexUwU/Proyecto-PrograWeb/master/Petroll/src/icon/catdogcut.png"
+                style="width: 10%;">
 
+              <p class="m-0 font-weight-bold colorHandy">Título:</p>
+              <p> {{solicitud.titulo}} </p>
+
+              <p class="m-0 font-weight-bold colorHandy">Descripción:</p>
+              <p> {{solicitud.descripcion}} </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </header>

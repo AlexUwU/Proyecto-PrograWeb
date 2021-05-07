@@ -1,3 +1,4 @@
+import { Solicitud } from './../modelos/Solicitud';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { BackendService } from '../../backend.service';
@@ -12,7 +13,31 @@ export class SolicitudesComponent implements OnInit {
 
   constructor(private backend: BackendService, private router: Router) {}
 
+  cookie!: Solicitud[];
+
   ngOnInit() {
+    this.getSolicitudes();
+  }
+
+  getSolicitudes() {
+    this.backend.getSolicitudes().subscribe((data) => {
+      this.cookie = data;
+      //console.log(this.cookie);
+    })
+  }
+
+  EliminarSolicitud(id: any) {
+
+    this.backend.EliminarSolicitud({_id:id}).subscribe((data) => {
+      alert('Solicitud eliminada correctamente!')
+      this.router.navigate(['home']);
+    })
+  }
+
+  VerSolicitud(id: any) {
+
+    localStorage.setItem('id',id);
+    this.router.navigate(['VerSolicitud']);
   }
 
   logout(){

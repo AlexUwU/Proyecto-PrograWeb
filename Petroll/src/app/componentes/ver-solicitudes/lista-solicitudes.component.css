@@ -1,0 +1,15 @@
+.tabla {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.thead-pet {
+  background-color: rgb(228, 141, 138) !important;
+  font-family: 'Prata' !important;
+}
+
+.tr-pet {
+  background-color: rgb(240, 202, 77) !important;
+  font-weight:bold;
+  font-family: 'Prata' !important;
+}

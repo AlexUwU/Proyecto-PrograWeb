@@ -58,7 +58,6 @@ export class LoginComponent implements OnInit {
       Usuario: this.Usuario.value,
       Contrasena: this.Contrasena.value
     }
-      console.log(data);
 
     let response = this.backend.loginUsuario(data);
 
