@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  server: "http://ec2co-ecsel-msmdwk3wnhbq-1923560983.us-east-2.elb.amazonaws.com:8009"
+  server: "http://ec2co-ecsel-vp4ygec1ed1i-1518992807.us-east-1.elb.amazonaws.com:8009"
   //server: 'http://localhost:8009'
 };
 
